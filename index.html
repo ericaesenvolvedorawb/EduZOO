@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduZoo: Aventura na Floresta do Saber</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Tela de Boas-Vindas -->
+    <div id="welcome-screen" class="screen active">
+        <div class="container">
+            <div class="logo">
+                <h1>EduZoo</h1>
+                <p>Aventura na Floresta do Saber</p>
+            </div>
+            
+            <div class="welcome-form">
+                <div class="input-group">
+                    <label for="player-name">Digite seu nome:</label>
+                    <input type="text" id="player-name" placeholder="Seu nome">
+                </div>
+                
+                <div class="input-group">
+                    <label for="player-age">Digite sua idade:</label>
+                    <input type="number" id="player-age" min="5" max="10" placeholder="Sua idade">
+                </div>
+                
+                <button id="start-btn" class="btn-primary">Começar Aventura!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Configurações -->
+    <div id="settings-screen" class="screen">
+        <div class="container">
+            <h2>Configurações</h2>
+            
+            <div class="settings-options">
+                <div class="setting-item">
+                    <input type="checkbox" id="opendyslexic-font">
+                    <label for="opendyslexic-font">Fonte OpenDyslexic</label>
+                </div>
+                
+                <div class="setting-item">
+                    <input type="checkbox" id="uppercase-letters">
+                    <label for="uppercase-letters">Letras MAIÚSCULAS</label>
+                </div>
+                
+                <div class="setting-item">
+                    <input type="checkbox" id="audio-reading" checked>
+                    <label for="audio-reading">Leitura de áudio</label>
+                </div>
+                
+                <div class="setting-item">
+                    <input type="checkbox" id="sound-effects" checked>
+                    <label for="sound-effects">Efeitos sonoros</label>
+                </div>
+                
+                <div class="setting-item">
+                    <input type="checkbox" id="theme-music" checked>
+                    <label for="theme-music">Música temática</label>
+                </div>
+            </div>
+            
+            <button id="settings-back" class="btn-secondary">Voltar</button>
+        </div>
+    </div>
+
+    <!-- Tela de Seleção de Avatar -->
+    <div id="avatar-screen" class="screen">
+        <div class="container">
+            <h2>Escolha seu amigo animal</h2>
+            
+            <div class="avatar-grid">
+                <div class="avatar-option" data-avatar="monkey">
+                    <span class="avatar-emoji">🐵</span>
+                    <p>Macaco Sabichão</p>
+                </div>
+                
+                <div class="avatar-option" data-avatar="owl">
+                    <span class="avatar-emoji">🦉</span>
+                    <p>Coruja Sábia</p>
+                </div>
+                
+                <div class="avatar-option" data-avatar="fox">
+                    <span class="avatar-emoji">🦊</span>
+                    <p>Raposa Ágil</p>
+                </div>
+                
+                <div class="avatar-option" data-avatar="tiger">
+                    <span class="avatar-emoji">🐯</span>
+                    <p>Tigre Corajoso</p>
+                </div>
+                
+                <div class="avatar-option" data-avatar="koala">
+                    <span class="avatar-emoji">🐨</span>
+                    <p>Coala Tranquilo</p>
+                </div>
+                
+                <div class="avatar-option" data-avatar="elephant">
+                    <span class="avatar-emoji">🐘</span>
+                    <p>Elefante Memória</p>
+                </div>
+            </div>
+            
+            <button id="avatar-back" class="btn-secondary">Voltar</button>
+        </div>
+    </div>
+
+    <!-- Tela Principal do Jogo -->
+    <div id="main-screen" class="screen">
+        <div class="container">
+            <header class="game-header">
+                <div class="player-info">
+                    <span id="player-avatar" class="avatar-display">🐵</span>
+                    <span id="player-display-name">Jogador</span>
+                </div>
+                
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-label">Pontos</span>
+                        <span id="points-counter" class="stat-value">0</span>
+                    </div>
+                    
+                    <div class="stat">
+                        <span class="stat-label">Conquistas</span>
+                        <span id="achievements-counter" class="stat-value">0/5</span>
+                    </div>
+                </div>
+                
+                <button id="settings-btn" class="btn-icon">⚙️</button>
+            </header>
+            
+            <main class="game-content">
+                <h2>Escolha sua aventura</h2>
+                
+                <div class="activity-grid">
+                    <div class="activity-card" data-activity="math">
+                        <div class="activity-icon">🔢</div>
+                        <h3>Ilha dos Números Mágicos</h3>
+                        <p>Matemática divertida com os animais</p>
+                    </div>
+                    
+                    <div class="activity-card" data-activity="portuguese">
+                        <div class="activity-icon">📚</div>
+                        <h3>Floresta das Letras Encantadas</h3>
+                        <p>Aventuras com palavras e histórias</p>
+                    </div>
+                    
+                    <div class="activity-card" data-activity="achievements">
+                        <div class="activity-icon">🏆</div>
+                        <h3>Minhas Conquistas</h3>
+                        <p>Veja suas medalhas e prêmios</p>
+                    </div>
+                    
+                    <div class="activity-card" data-activity="secret">
+                        <div class="activity-icon">🔒</div>
+                        <h3>Missões Secretas</h3>
+                        <p>Atividades especiais para desbloquear</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Tela de Atividades de Matemática -->
+    <div id="math-screen" class="screen">
+        <div class="container">
+            <header class="activity-header">
+                <button id="math-back" class="btn-back">← Voltar</button>
+                <h2>Ilha dos Números Mágicos</h2>
+            </header>
+            
+            <div class="activities-container">
+                <div class="math-activity" data-math-activity="addition">
+                    <div class="activity-visual">
+                        <div class="panda-container">
+                            <div class="panda">🐼</div>
+                            <div class="bamboos">
+                                <div class="bamboo">🎋</div>
+                                <div class="bamboo">🎋</div>
+                                <div class="bamboo">🎋</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-question">
+                        <p>O panda tem 3 bambus e ganhou mais 2. Quantos ele tem agora?</p>
+                    </div>
+                    
+                    <div class="activity-options">
+                        <button class="math-option" data-answer="4">4</button>
+                        <button class="math-option" data-answer="5">5</button>
+                        <button class="math-option" data-answer="6">6</button>
+                    </div>
+                </div>
+                
+                <!-- Outras atividades de matemática seriam adicionadas aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Conquistas -->
+    <div id="achievements-screen" class="screen">
+        <div class="container">
+            <header class="activity-header">
+                <button id="achievements-back" class="btn-back">← Voltar</button>
+                <h2>Minhas Conquistas</h2>
+            </header>
+            
+            <div class="achievements-list">
+                <div class="achievement-item locked">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-info">
+                        <h3>Primeiros Passos</h3>
+                        <p>Complete 5 atividades</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievement-item locked">
+                    <div class="achievement-icon">🎯</div>
+                    <div class="achievement-info">
+                        <h3>Mestre das Letras</h3>
+                        <p>Acerte 10 palavras consecutivas</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Outras conquistas seriam adicionadas aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Áudio para efeitos sonoros -->
+    <audio id="correct-sound" src="sounds/correct.mp3" preload="auto"></audio>
+    <audio id="success-sound" src="sounds/success.mp3" preload="auto"></audio>
+    
+    <script src="js/game.js"></script>
+</body>
+</html>
